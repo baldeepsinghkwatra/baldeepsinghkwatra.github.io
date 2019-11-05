@@ -447,6 +447,10 @@ Olympiad.Global Academy.
         $('.navbar-collapse a').click(function(){
             $(".navbar-collapse").collapse('hide');
         });
+        // Tooltips Initialization
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
 
         /* WOW.js init */
         new WOW().init();
