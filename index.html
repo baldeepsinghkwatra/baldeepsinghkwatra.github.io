@@ -313,8 +313,17 @@
 
         .company-logo {
             height: 40px;
+            width: auto;
+            max-width: 200px;
             margin-bottom: 1rem;
             transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .company-logo.rounded-circle {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
         }
 
         .experience-card:hover .company-logo {
@@ -336,6 +345,16 @@
             background: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(79, 70, 229, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+        }
+
+        .skill-item h5 {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .skill-item:hover {
@@ -345,10 +364,10 @@
         }
 
         .skill-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
+            width: 64px;
+            height: 64px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            object-fit: contain;
         }
 
         .skill-item:hover .skill-icon {
@@ -686,139 +705,108 @@
                 <!-- Backend & Core -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
                     <img src="img/java.svg" alt="Java" class="skill-icon">
-                    <h5>Java</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
                     <img src="img/nodejs.svg" alt="NodeJS" class="skill-icon">
-                    <h5>NodeJS</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
                     <img src="img/spring.svg" alt="Spring" class="skill-icon">
-                    <h5>Spring</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
                     <img src="img/hibernate.svg" alt="Hibernate" class="skill-icon">
-                    <h5>Hibernate</h5>
                 </div>
 
                 <!-- Cloud & DevOps -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
                     <img src="img/aws.svg" alt="AWS" class="skill-icon">
-                    <h5>AWS</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="700">
                     <img src="img/gcp.svg" alt="GCP" class="skill-icon">
-                    <h5>GCP</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="800">
                     <img src="img/kubernetes.svg" alt="Kubernetes" class="skill-icon">
-                    <h5>Kubernetes</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="900">
                     <img src="img/docker.svg" alt="Docker" class="skill-icon">
-                    <h5>Docker</h5>
                 </div>
 
                 <!-- Message Brokers & Databases -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
                     <img src="img/kafka.svg" alt="Kafka" class="skill-icon">
-                    <h5>Kafka</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1100">
                     <img src="img/rabbitmq.svg" alt="RabbitMQ" class="skill-icon">
-                    <h5>RabbitMQ</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1200">
                     <img src="img/mongodb.svg" alt="MongoDB" class="skill-icon">
-                    <h5>MongoDB</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1300">
                     <img src="img/postgresql.svg" alt="PostgreSQL" class="skill-icon">
-                    <h5>PostgreSQL</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1400">
                     <img src="img/mysql.svg" alt="MySQL" class="skill-icon">
-                    <h5>MySQL</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1500">
                     <img src="img/redis.svg" alt="Redis" class="skill-icon">
-                    <h5>Redis</h5>
                 </div>
 
                 <!-- Frontend -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1600">
                     <img src="img/vue.svg" alt="Vue.js" class="skill-icon">
-                    <h5>Vue.js</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1700">
                     <img src="img/nuxt.svg" alt="Nuxt.js" class="skill-icon">
-                    <h5>Nuxt.js</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1800">
                     <img src="img/vuetify.svg" alt="Vuetify" class="skill-icon">
-                    <h5>Vuetify</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="1900">
                     <img src="img/bootstrap.svg" alt="Bootstrap" class="skill-icon">
-                    <h5>Bootstrap</h5>
                 </div>
 
                 <!-- CMS & Tools -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2000">
                     <img src="img/strapi.svg" alt="Strapi" class="skill-icon">
-                    <h5>Strapi</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2100">
                     <img src="img/drupal.svg" alt="Drupal" class="skill-icon">
-                    <h5>Drupal</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2200">
                     <img src="img/elastic.svg" alt="Elasticsearch" class="skill-icon">
-                    <h5>Elasticsearch</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2300">
                     <img src="img/nginx.svg" alt="Nginx" class="skill-icon">
-                    <h5>Nginx</h5>
                 </div>
 
                 <!-- Development Tools -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2400">
                     <img src="img/git.svg" alt="Git" class="skill-icon">
-                    <h5>Git</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2500">
                     <img src="img/maven.svg" alt="Maven" class="skill-icon">
-                    <h5>Maven</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2600">
                     <img src="img/npm.svg" alt="npm" class="skill-icon">
-                    <h5>npm</h5>
                 </div>
 
                 <!-- Additional Technologies -->
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2700">
                     <img src="img/tomcat.svg" alt="Tomcat" class="skill-icon">
-                    <h5>Tomcat</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2800">
                     <img src="img/glassfish.svg" alt="GlassFish" class="skill-icon">
-                    <h5>GlassFish</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="2900">
                     <img src="img/android.svg" alt="Android" class="skill-icon">
-                    <h5>Android</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="3000">
                     <img src="img/tibco.svg" alt="TIBCO" class="skill-icon">
-                    <h5>TIBCO</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="3100">
                     <img src="img/stripe.svg" alt="Stripe" class="skill-icon">
-                    <h5>Stripe</h5>
                 </div>
                 <div class="skill-item" data-aos="fade-up" data-aos-delay="3200">
                     <img src="img/sendgrid.svg" alt="SendGrid" class="skill-icon">
-                    <h5>SendGrid</h5>
                 </div>
             </div>
         </div>
