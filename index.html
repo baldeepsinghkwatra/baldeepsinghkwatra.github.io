@@ -332,15 +332,15 @@
 
         .skill-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
             padding: 2rem 0;
         }
 
         .skill-item {
             text-align: center;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 1rem;
             background: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -349,12 +349,19 @@
             align-items: center;
             justify-content: center;
             aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
         }
 
-        .skill-item h5 {
-            margin-top: 0.5rem;
-            font-size: 1rem;
-            font-weight: 500;
+        .skill-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            padding: 0.5rem;
         }
 
         .skill-item:hover {
@@ -363,9 +370,26 @@
             background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.05));
         }
 
+        .skill-item:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
         .skill-icon {
-            width: 64px;
-            height: 64px;
+            width: 100%;
+            height: 100%;
+            max-width: 80px;
+            max-height: 80px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             object-fit: contain;
         }
@@ -413,10 +437,7 @@
         .social-links a:nth-child(6) { animation-delay: 1.2s; }
 
         .quote-section {
-            background: linear-gradient(rgba(79, 70, 229, 0.9), rgba(124, 58, 237, 0.9)), url('img/bg.svg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(124, 58, 237, 0.9));
             padding: 8rem 0;
             color: white;
             position: relative;
@@ -442,11 +463,15 @@
         }
 
         .contact-section {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(124, 58, 237, 0.9));
             color: white;
             padding: 6rem 0;
             position: relative;
             overflow: hidden;
+            background-image: url('img/bg.svg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .contact-section::before {
@@ -456,8 +481,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('img/bg.svg') center/cover;
-            opacity: 0.1;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(124, 58, 237, 0.9));
+            z-index: 1;
+        }
+
+        .contact-section .container {
+            position: relative;
+            z-index: 2;
         }
 
         .achievement-list {
@@ -703,110 +733,172 @@
             <h2 class="section-title" data-aos="fade-up">Development <span class="highlight">Skills</span></h2>
             <div class="skill-grid">
                 <!-- Backend & Core -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="img/java.svg" alt="Java" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="200" data-tooltip="Java">
+                    <a href="https://www.oracle.com/java/" target="_blank">
+                        <img src="img/java.svg" alt="Java" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="img/nodejs.svg" alt="NodeJS" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="300" data-tooltip="NodeJS">
+                    <a href="https://nodejs.org/" target="_blank">
+                        <img src="img/nodejs.svg" alt="NodeJS" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="img/spring.svg" alt="Spring" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="400" data-tooltip="Spring">
+                    <a href="https://spring.io/" target="_blank">
+                        <img src="img/spring.svg" alt="Spring" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
-                    <img src="img/hibernate.svg" alt="Hibernate" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="500" data-tooltip="Hibernate">
+                    <a href="https://hibernate.org/" target="_blank">
+                        <img src="img/hibernate.svg" alt="Hibernate" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- Cloud & DevOps -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
-                    <img src="img/aws.svg" alt="AWS" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="600" data-tooltip="AWS">
+                    <a href="https://aws.amazon.com/" target="_blank">
+                        <img src="img/aws.svg" alt="AWS" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="700">
-                    <img src="img/gcp.svg" alt="GCP" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="700" data-tooltip="GCP">
+                    <a href="https://cloud.google.com/" target="_blank">
+                        <img src="img/gcp.svg" alt="GCP" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="800">
-                    <img src="img/kubernetes.svg" alt="Kubernetes" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="800" data-tooltip="Kubernetes">
+                    <a href="https://kubernetes.io/" target="_blank">
+                        <img src="img/kubernetes.svg" alt="Kubernetes" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="900">
-                    <img src="img/docker.svg" alt="Docker" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="900" data-tooltip="Docker">
+                    <a href="https://www.docker.com/" target="_blank">
+                        <img src="img/docker.svg" alt="Docker" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- Message Brokers & Databases -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
-                    <img src="img/kafka.svg" alt="Kafka" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1000" data-tooltip="Kafka">
+                    <a href="https://kafka.apache.org/" target="_blank">
+                        <img src="img/kafka.svg" alt="Kafka" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1100">
-                    <img src="img/rabbitmq.svg" alt="RabbitMQ" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1100" data-tooltip="RabbitMQ">
+                    <a href="https://www.rabbitmq.com/" target="_blank">
+                        <img src="img/rabbitmq.svg" alt="RabbitMQ" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1200">
-                    <img src="img/mongodb.svg" alt="MongoDB" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1200" data-tooltip="MongoDB">
+                    <a href="https://www.mongodb.com/" target="_blank">
+                        <img src="img/mongodb.svg" alt="MongoDB" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1300">
-                    <img src="img/postgresql.svg" alt="PostgreSQL" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1300" data-tooltip="PostgreSQL">
+                    <a href="https://www.postgresql.org/" target="_blank">
+                        <img src="img/postgresql.svg" alt="PostgreSQL" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1400">
-                    <img src="img/mysql.svg" alt="MySQL" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1400" data-tooltip="MySQL">
+                    <a href="https://www.mysql.com/" target="_blank">
+                        <img src="img/mysql.svg" alt="MySQL" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1500">
-                    <img src="img/redis.svg" alt="Redis" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1500" data-tooltip="Redis">
+                    <a href="https://redis.io/" target="_blank">
+                        <img src="img/redis.svg" alt="Redis" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- Frontend -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1600">
-                    <img src="img/vue.svg" alt="Vue.js" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1600" data-tooltip="Vue.js">
+                    <a href="https://vuejs.org/" target="_blank">
+                        <img src="img/vue.svg" alt="Vue.js" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1700">
-                    <img src="img/nuxt.svg" alt="Nuxt.js" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1700" data-tooltip="Nuxt.js">
+                    <a href="https://nuxtjs.org/" target="_blank">
+                        <img src="img/nuxt.svg" alt="Nuxt.js" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1800">
-                    <img src="img/vuetify.svg" alt="Vuetify" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1800" data-tooltip="Vuetify">
+                    <a href="https://vuetifyjs.com/" target="_blank">
+                        <img src="img/vuetify.svg" alt="Vuetify" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="1900">
-                    <img src="img/bootstrap.svg" alt="Bootstrap" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="1900" data-tooltip="Bootstrap">
+                    <a href="https://getbootstrap.com/" target="_blank">
+                        <img src="img/bootstrap.svg" alt="Bootstrap" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- CMS & Tools -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2000">
-                    <img src="img/strapi.svg" alt="Strapi" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2000" data-tooltip="Strapi">
+                    <a href="https://strapi.io/" target="_blank">
+                        <img src="img/strapi.svg" alt="Strapi" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2100">
-                    <img src="img/drupal.svg" alt="Drupal" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2100" data-tooltip="Drupal">
+                    <a href="https://www.drupal.org/" target="_blank">
+                        <img src="img/drupal.svg" alt="Drupal" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2200">
-                    <img src="img/elastic.svg" alt="Elasticsearch" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2200" data-tooltip="Elasticsearch">
+                    <a href="https://www.elastic.co/elasticsearch/" target="_blank">
+                        <img src="img/elastic.svg" alt="Elasticsearch" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2300">
-                    <img src="img/nginx.svg" alt="Nginx" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2300" data-tooltip="Nginx">
+                    <a href="https://www.nginx.com/" target="_blank">
+                        <img src="img/nginx.svg" alt="Nginx" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- Development Tools -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2400">
-                    <img src="img/git.svg" alt="Git" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2400" data-tooltip="Git">
+                    <a href="https://git-scm.com/" target="_blank">
+                        <img src="img/git.svg" alt="Git" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2500">
-                    <img src="img/maven.svg" alt="Maven" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2500" data-tooltip="Maven">
+                    <a href="https://maven.apache.org/" target="_blank">
+                        <img src="img/maven.svg" alt="Maven" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2600">
-                    <img src="img/npm.svg" alt="npm" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2600" data-tooltip="npm">
+                    <a href="https://www.npmjs.com/" target="_blank">
+                        <img src="img/npm.svg" alt="npm" class="skill-icon">
+                    </a>
                 </div>
 
                 <!-- Additional Technologies -->
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2700">
-                    <img src="img/tomcat.svg" alt="Tomcat" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2700" data-tooltip="Tomcat">
+                    <a href="https://tomcat.apache.org/" target="_blank">
+                        <img src="img/tomcat.svg" alt="Tomcat" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2800">
-                    <img src="img/glassfish.svg" alt="GlassFish" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2800" data-tooltip="GlassFish">
+                    <a href="https://glassfish.org/" target="_blank">
+                        <img src="img/glassfish.svg" alt="GlassFish" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="2900">
-                    <img src="img/android.svg" alt="Android" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="2900" data-tooltip="Android">
+                    <a href="https://developer.android.com/" target="_blank">
+                        <img src="img/android.svg" alt="Android" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="3000">
-                    <img src="img/tibco.svg" alt="TIBCO" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="3000" data-tooltip="TIBCO">
+                    <a href="https://www.tibco.com/" target="_blank">
+                        <img src="img/tibco.svg" alt="TIBCO" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="3100">
-                    <img src="img/stripe.svg" alt="Stripe" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="3100" data-tooltip="Stripe">
+                    <a href="https://stripe.com/" target="_blank">
+                        <img src="img/stripe.svg" alt="Stripe" class="skill-icon">
+                    </a>
                 </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="3200">
-                    <img src="img/sendgrid.svg" alt="SendGrid" class="skill-icon">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="3200" data-tooltip="SendGrid">
+                    <a href="https://sendgrid.com/" target="_blank">
+                        <img src="img/sendgrid.svg" alt="SendGrid" class="skill-icon">
+                    </a>
                 </div>
             </div>
         </div>
