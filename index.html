@@ -365,10 +365,13 @@
         }
 
         .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .skill-item {
@@ -378,10 +381,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            aspect-ratio: 1;
+            width: 120px;
+            height: 120px;
             position: relative;
             overflow: hidden;
-            min-height: 120px;
         }
 
         .skill-item a {
@@ -392,17 +395,17 @@
             height: 100%;
             text-decoration: none;
             color: inherit;
-            padding: 0.5rem;
+            padding: 0;
         }
 
         .skill-icon {
             width: 100%;
             height: 100%;
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 100px;
+            max-height: 100px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             object-fit: contain;
-            padding: 0rem;
+            padding: 0;
         }
 
         .skill-item:hover {
@@ -569,6 +572,20 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .skill-grid {
+                gap: 1.5rem;
+            }
+            
+            .skill-item {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .skill-icon {
+                max-width: 80px;
+                max-height: 80px;
             }
         }
     </style>
